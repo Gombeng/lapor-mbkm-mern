@@ -1,0 +1,34 @@
+.main-login {
+	display: flex;
+	min-height: 100vh;
+}
+
+.left,
+.right {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.left {
+	flex: 2;
+	background: #b6c2ff;
+
+	.bg {
+		max-width: 70%;
+	}
+}
+
+.right {
+	padding: 2rem;
+	flex: 1;
+	color: #fff;
+	flex-direction: column;
+	background: #043175;
+	align-items: flex-start;
+
+	.bg {
+		width: 5rem;
+		border-radius: 50%;
+	}
+}
