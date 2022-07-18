@@ -46,11 +46,14 @@ const Login = () => {
 			);
 
 			console.log(data);
+
 			localStorage.setItem('userInfo', JSON.stringify(data));
+			localStorage.setItem('userName', JSON.stringify(data.fullName));
 			setLoading(false);
-			navigate('/');
+			navigate('/dashboard');
 		} catch (error) {
 			setLoading(false);
+			console.log(error.response);
 			setError(error.response.data.message);
 		}
 	};

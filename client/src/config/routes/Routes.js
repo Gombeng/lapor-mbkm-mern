@@ -4,6 +4,7 @@ import {
 	Routes as Switch,
 	Route,
 } from 'react-router-dom';
+import { AdboMK, PemwebMK } from '../../pages/detailMK/DetailMK';
 import {
 	Login,
 	MainApp,
@@ -21,9 +22,11 @@ const Routes = () => {
 				<Route exact path="login" element={<Login />} />
 				<Route exact path="register" element={<Register />} />
 				<Route exact path="/" element={<MainApp />}>
-					<Route index exact element={<Dashboard />} />
 					<Route index exact path="dashboard" element={<Dashboard />} />
-					<Route exact path="isi-borang" element={<IsiBorang />} />
+					<Route exact path="isi-borang" element={<IsiBorang />}>
+						<Route exact path="adbo" element={<AdboMK />} />
+						<Route exact path="pemweb" element={<PemwebMK />} />
+					</Route>
 					<Route exact path="logsheet" element={<Logsheet />} />
 					<Route exact path="*" element={<NotFound />} />
 				</Route>

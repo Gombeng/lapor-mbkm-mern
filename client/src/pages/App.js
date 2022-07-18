@@ -2,11 +2,7 @@ import { Routes } from '../config/Config';
 import './App.css';
 
 function App() {
-	return (
-		<div>
-			<Routes />
-		</div>
-	);
+	return <Routes />;
 }
 
 export default App;

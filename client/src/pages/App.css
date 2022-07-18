@@ -11,7 +11,7 @@ body{
 }
 
 .border{
-  border: 3px solid black;
+  border: 3px solid #043175;
   border-radius: .3rem;
 }
 
@@ -29,14 +29,21 @@ body{
 	border-radius: 0.3rem;
 }
 
-.p1{
+.p-1{
   padding: 1rem;
 }
 
-.mb-1{
-  margin-bottom: 1rem;
+.ml-1{
+  margin-left: 1rem;
+}
+.mt-1{
+  margin-top: 1rem;
 }
 
 .mr-1{
   margin-right: 1rem;
+}
+
+.mb-1{
+  margin-bottom: 1rem;
 }

@@ -19,7 +19,7 @@ const NotFound = () => {
 			<Button
 				title="Back to Dashboard"
 				className="button notfound"
-				onClick={() => navigate('/')}
+				onClick={() => navigate('/dashboard')}
 			/>
 		</div>
 	);

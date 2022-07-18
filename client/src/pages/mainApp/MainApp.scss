@@ -1,23 +1,51 @@
 .main-app {
 	display: flex;
 	min-height: 80vh;
-	// padding: 0 2rem;
 
 	.sidenav {
 		display: flex;
 		flex-direction: column;
-		min-width: 200px;
-		// border: 1px solid black;
+		min-width: 15rem;
 		background: #b6c2ff;
+		color: #fff;
+		background: #043175;
 
 		.link {
-			// background: #000;
-			color: #000;
-			border-bottom: 1px solid black;
-
+			color: #fff;
 			padding: 0.8rem 2rem;
-			// margin-bottom: 1rem;
 			text-decoration: none;
+			transition: 0.3s;
+
+			&.active {
+				color: #000;
+				font-weight: bold;
+				background: rgb(255, 255, 255);
+				position: relative;
+
+				&::before,
+				&::after {
+					content: '';
+					position: absolute;
+					width: 0.5rem;
+					height: 0.5rem;
+					top: 39%;
+				}
+
+				&::before {
+					background: rgb(0, 0, 0);
+					left: calc(100% - 1.8rem - 0.3rem);
+					top: 42%;
+					border-radius: 50%;
+				}
+
+				&::after {
+					border: 3px solid rgb(0, 0, 0);
+					border-left: 0;
+					border-bottom: 0;
+					left: calc(100% - 1rem - 0.3rem);
+					transform: rotate(45deg);
+				}
+			}
 		}
 	}
 	.content {
