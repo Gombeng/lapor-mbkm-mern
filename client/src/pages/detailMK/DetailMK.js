@@ -1,3 +1,3 @@
-import AdboMK from './adboMK/Adbo.mk';
-import PemwebMK from './pemwebMK/Pemweb.mk';
+import AdboMK from './adboMK/AdboMK';
+import PemwebMK from './pemwebMK/PemwebMK';
 export { AdboMK, PemwebMK };

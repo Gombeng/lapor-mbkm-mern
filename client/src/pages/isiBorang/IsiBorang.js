@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet';
 import { Outlet, useNavigate } from 'react-router-dom';
 // import Select from 'react-select';
 import styled from 'styled-components';
+import { FlexBox } from '../../components/Components';
 
 let options = [
 	{
@@ -34,7 +35,7 @@ const IsiBorang = () => {
 
 					<Container>
 						<Select onChange={(e) => changeUrl(e.target.value)}>
-							<option value="">Silahkan Pilih MK</option>
+							<option value="">--Silahkan Pilih MK--</option>
 							{options.map((option) => (
 								<option value={option.value}>{option.label}</option>
 							))}
@@ -49,12 +50,6 @@ const IsiBorang = () => {
 		</div>
 	);
 };
-
-const FlexBox = styled.div`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-`;
 
 const Container = styled.div`
 	position: relative;

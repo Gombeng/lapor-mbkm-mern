@@ -4,7 +4,7 @@ const User = require('../models/User.model');
 
 // create new user
 const registerUser = asyncHandler(async (request, response) => {
-	const { fullName, email, password } = request.body;
+	const { nim, fullName, email, password } = request.body;
 
 	const userExists = await User.findOne({ email });
 
@@ -14,6 +14,7 @@ const registerUser = asyncHandler(async (request, response) => {
 	}
 
 	const user = await User.create({
+		nim,
 		fullName,
 		email,
 		password,
@@ -22,13 +23,14 @@ const registerUser = asyncHandler(async (request, response) => {
 	if (user) {
 		response.status(201).json({
 			_id: user._id,
+			nim: user.nim,
 			fullName: user.fullName,
 			email: user.email,
 			token: generateToken(user._id),
 		});
 	} else {
 		response.status(400);
-		throw new Error('Pengguna tidak ditemukan');
+		throw new Error('Kesalahan Pengguna');
 	}
 });
 
@@ -41,13 +43,14 @@ const loginUser = asyncHandler(async (request, response) => {
 	if (user && (await user.matchPassword(password))) {
 		response.json({
 			_id: user._id,
+			nim: user.nim,
 			fullName: user.fullName,
 			email: user.email,
 			token: generateToken(user._id),
 		});
 	} else {
 		response.status(401);
-		throw new Error('Email atau kata sandi salah! Silahkan perbaiki!');
+		throw new Error('Email atau kata sandi salah!');
 	}
 });
 

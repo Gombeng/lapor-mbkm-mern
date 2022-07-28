@@ -1,25 +1,27 @@
 import React from 'react';
 import { Helmet } from 'react-helmet';
+import { Button } from '../../components/Components';
 
 const Dashboard = () => {
-	let userName = JSON.parse(localStorage.getItem('userName'));
+	let userInfo = JSON.parse(localStorage.getItem('userInfo'));
 	return (
 		<div>
 			<Helmet>
 				<title>Dashboard | Lapor MBKM</title>
 			</Helmet>
-			<div className="card border p-1 mb-1">
-				<h2>Selamat datang, {userName}!</h2>
+			<div className="mb-1">
+				<h2>Selamat datang, {userInfo.fullName}!</h2>
 				<p>Jangan lupa isi borangnya hehe!</p>
 			</div>
 
-			<h2>Todo</h2>
-			<div className="card border p-1 mb-1">
-				<li>Isi borang mk 1</li>
-				<li>Isi borang mk 2</li>
-				<li>Isi borang mk 3</li>
-				<li>Isi borang mk 3</li>
-				<li>Isi borang mk 3</li>
+			<div className="mb-1">
+				<h2>Todo</h2>
+				<li>
+					Upload Surat Keterangan diterima Mitra{' '}
+					<Button className="button" title="Upload SK" />
+				</li>
+				<li>Isi borang penyetaraan mata kuliah</li>
+				<li>Isi Logsheet Harian</li>
 			</div>
 		</div>
 	);

@@ -3,10 +3,9 @@ import axios from 'axios';
 import ClipLoader from 'react-spinners/ClipLoader';
 import { Helmet } from 'react-helmet';
 import { useNavigate } from 'react-router-dom';
-
+import { Button, Gap, Input, Message } from '../../components/Components';
 import './Login.scss';
 import { LoginBg } from '../../assets/Assets';
-import { Button, Gap, Input, Message } from '../../components/Components';
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -15,7 +14,7 @@ const Login = () => {
 		const userInfo = localStorage.getItem('userInfo');
 
 		if (userInfo) {
-			navigate('/');
+			navigate('/dashboard');
 		}
 	}, [navigate]);
 
@@ -48,7 +47,6 @@ const Login = () => {
 			console.log(data);
 
 			localStorage.setItem('userInfo', JSON.stringify(data));
-			localStorage.setItem('userName', JSON.stringify(data.fullName));
 			setLoading(false);
 			navigate('/dashboard');
 		} catch (error) {

@@ -38,6 +38,12 @@ const MainApp = () => {
 					>
 						Logsheet
 					</NavLink>
+					<NavLink
+						className={({ isActive }) => (isActive ? 'link active' : 'link')}
+						to="profil"
+					>
+						Profil
+					</NavLink>
 				</div>
 
 				<div className="content">

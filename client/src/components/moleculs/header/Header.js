@@ -27,7 +27,7 @@ const Header = () => {
 				<img className="mr-1" src={Logo} width={30} alt="Logo" />
 				<p>Lapor MBKM</p>
 			</Flex>
-			<Button title="Logout" className="button link" onClick={logOut} />
+			<Button title="Keluar" className="button link" onClick={logOut} />
 		</div>
 	);
 };

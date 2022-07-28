@@ -9,6 +9,7 @@ import { Helmet } from 'react-helmet';
 const Register = () => {
 	const navigate = useNavigate();
 
+	const [nim, setNim] = useState('');
 	const [fullName, setFullName] = useState('');
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -30,6 +31,7 @@ const Register = () => {
 			const { data } = await axios.post(
 				'http://localhost:5000/register',
 				{
+					nim,
 					fullName,
 					email,
 					password,
@@ -39,7 +41,6 @@ const Register = () => {
 
 			console.log(data);
 			localStorage.setItem('userInfo', JSON.stringify(data));
-			localStorage.setItem('userName', JSON.stringify(data.fullName));
 			setLoading(false);
 			navigate('/login');
 		} catch (error) {
@@ -63,6 +64,15 @@ const Register = () => {
 				{error && <Message className="mb-1 error">{error}</Message>}
 
 				<Input
+					value={nim}
+					onChange={(e) => setNim(e.target.value)}
+					label="NIM"
+					type="text"
+					placeholder="18015520124"
+				/>
+				<Gap height={20} />
+
+				<Input
 					value={fullName}
 					onChange={(e) => setFullName(e.target.value)}
 					label="Nama Lengkap"
@@ -77,6 +87,24 @@ const Register = () => {
 					label="Email"
 					type="email"
 					placeholder="user@gmail.com"
+				/>
+				<Gap height={20} />
+
+				<Input
+					// value={email}
+					// onChange={(e) => setEmail(e.target.value)}
+					label="Program yang diikuti"
+					type="text"
+					placeholder="--Pilih program--"
+				/>
+				<Gap height={20} />
+
+				<Input
+					// value={email}
+					// onChange={(e) => setEmail(e.target.value)}
+					label="Jenis Kelamin"
+					type="email"
+					placeholder="Laki Laki"
 				/>
 				<Gap height={20} />
 

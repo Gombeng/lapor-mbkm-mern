@@ -13,6 +13,7 @@ import {
 	Logsheet,
 	NotFound,
 	Dashboard,
+	Profil,
 } from '../../pages/Pages';
 
 const Routes = () => {
@@ -22,12 +23,14 @@ const Routes = () => {
 				<Route exact path="login" element={<Login />} />
 				<Route exact path="register" element={<Register />} />
 				<Route exact path="/" element={<MainApp />}>
-					<Route index exact path="dashboard" element={<Dashboard />} />
+					<Route index element={<Dashboard />} />
+					<Route exact path="dashboard" element={<Dashboard />} />
 					<Route exact path="isi-borang" element={<IsiBorang />}>
 						<Route exact path="adbo" element={<AdboMK />} />
 						<Route exact path="pemweb" element={<PemwebMK />} />
 					</Route>
 					<Route exact path="logsheet" element={<Logsheet />} />
+					<Route exact path="profil" element={<Profil />} />
 					<Route exact path="*" element={<NotFound />} />
 				</Route>
 			</Switch>
